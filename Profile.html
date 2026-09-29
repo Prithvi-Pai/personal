@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Prithvi Pai — Lead Consultant, SAP HANA & Data Engineering">
+<title>Prithvi Pai | Lead Consultant — SAP HANA & Data Engineering</title>
+<style>
+:root{
+  --bg:#07111f;
+  --panel:#0d1a2b;
+  --panel2:#102239;
+  --text:#eaf2fb;
+  --muted:#9db0c6;
+  --line:rgba(255,255,255,.09);
+  --accent:#65d8ff;
+  --accent2:#8b7cff;
+  --white:#fff;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 80% 5%,rgba(101,216,255,.12),transparent 30%),
+    radial-gradient(circle at 10% 30%,rgba(139,124,255,.09),transparent 28%),
+    var(--bg);
+  line-height:1.65;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),92%);margin:auto}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:20;
+  backdrop-filter:blur(18px);
+  background:rgba(7,17,31,.72);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:.08em;font-size:.9rem}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:26px;color:var(--muted);font-size:.9rem}
+.nav-links a:hover{color:var(--white)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:70px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  color:var(--accent);font-size:.82rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.13em;
+  margin-bottom:20px
+}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+h1{font-size:clamp(3.1rem,7vw,6.3rem);line-height:.98;letter-spacing:-.065em;margin:0 0 26px;max-width:850px}
+.gradient{background:linear-gradient(100deg,#fff 20%,var(--accent) 65%,#a99fff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-copy{font-size:1.13rem;color:var(--muted);max-width:700px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:12px 18px;border-radius:12px;border:1px solid var(--line);
+  font-weight:700;font-size:.92rem;transition:.2s ease
+}
+.btn-primary{background:var(--white);color:#07111f;border-color:var(--white)}
+.btn:hover{transform:translateY(-2px)}
+.profile-card{
+  position:relative;padding:30px;border:1px solid var(--line);border-radius:26px;
+  background:linear-gradient(145deg,rgba(16,34,57,.9),rgba(10,23,39,.75));
+  box-shadow:0 25px 80px rgba(0,0,0,.28);
+}
+.profile-card:before{
+  content:"";position:absolute;inset:-1px;border-radius:26px;padding:1px;
+  background:linear-gradient(140deg,rgba(101,216,255,.5),transparent 45%,rgba(139,124,255,.4));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none
+}
+.initials{
+  width:82px;height:82px;border-radius:22px;display:grid;place-items:center;
+  font-size:1.7rem;font-weight:900;margin-bottom:24px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06101c
+}
+.stat{padding:15px 0;border-top:1px solid var(--line)}
+.stat:first-of-type{border-top:0}
+.stat strong{display:block;font-size:1.45rem}
+.stat span{color:var(--muted);font-size:.85rem}
+section{padding:105px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+.kicker{color:var(--accent);font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.15em}
+h2{font-size:clamp(2rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.045em;margin:8px 0 0}
+.section-intro{color:var(--muted);max-width:510px;margin:0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.card{
+  background:rgba(13,26,43,.72);border:1px solid var(--line);
+  border-radius:20px;padding:28px
+}
+.card p{color:var(--muted);margin:0}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.skill{
+  padding:8px 11px;border:1px solid var(--line);border-radius:999px;
+  color:#c9d8e8;background:rgba(255,255,255,.025);font-size:.83rem
+}
+.timeline{position:relative;margin-top:30px}
+.timeline:before{content:"";position:absolute;left:10px;top:7px;bottom:7px;width:1px;background:var(--line)}
+.role{position:relative;padding-left:43px;margin-bottom:55px}
+.role:before{
+  content:"";position:absolute;left:5px;top:9px;width:11px;height:11px;
+  border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(101,216,255,.09)
+}
+.role-top{display:flex;justify-content:space-between;gap:20px;align-items:baseline}
+.company{font-size:1.35rem;font-weight:800}
+.role-title{color:var(--accent);font-weight:700;margin-top:2px}
+.date{color:var(--muted);font-size:.84rem;white-space:nowrap}
+.role p{color:var(--muted);max-width:850px}
+.role ul{margin:15px 0 0;padding-left:18px;color:var(--muted)}
+.role li{margin:8px 0}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{
+  min-height:220px;padding:25px;border:1px solid var(--line);border-radius:20px;
+  background:linear-gradient(145deg,rgba(16,34,57,.7),rgba(13,26,43,.45));
+}
+.project .num{font-size:.78rem;color:var(--accent);font-weight:800}
+.project h3{font-size:1.2rem;margin:18px 0 8px}
+.project p{color:var(--muted);font-size:.92rem}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.awards{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.award{padding:13px 16px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025)}
+footer{border-top:1px solid var(--line);padding:50px 0;color:var(--muted)}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.small{font-size:.86rem}
+@media(max-width:850px){
+  .nav-links{display:none}
+  .hero-grid,.about-grid,.edu{grid-template-columns:1fr}
+  .project-grid{grid-template-columns:1fr}
+  .hero{padding-top:110px}
+  .profile-card{max-width:520px}
+  .section-head{display:block}
+  .section-intro{margin-top:15px}
+  .role-top{display:block}
+  .date{display:block;margin-top:5px}
+}
+@media(max-width:500px){
+  h1{font-size:3.25rem}
+  section{padding:75px 0}
+  .card,.profile-card{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#top">PP<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow"><span class="dot"></span> Lead Consultant · Data & Analytics</div>
+      <h1>Building <span class="gradient">data solutions</span> that move from complexity to clarity.</h1>
+      <p class="hero-copy">
+        I’m Prithvi Pai, a Lead Consultant with 11+ years of experience across database technologies,
+        SAP HANA, SAP BW on HANA and data engineering. I enjoy turning business requirements into
+        scalable data models, performant reporting solutions and practical analytics platforms.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#experience">Explore experience</a>
+        <a class="btn" href="mailto:prat.pi008@gmail.com">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/pp2025" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+
+    <aside class="profile-card">
+      <div class="initials">PP</div>
+      <div class="stat"><strong>11+</strong><span>Years in data & database technologies</span></div>
+      <div class="stat"><strong>HANA</strong><span>SAP HANA & SAP BW on HANA</span></div>
+      <div class="stat"><strong>4</strong><span>People managed at HGS</span></div>
+      <div class="stat"><strong>3rd</strong><span>Snowflake Data for Good Hackathon</span></div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">01 · About</div><h2>Technical depth.<br>Business context.</h2></div>
+      <p class="section-intro">A career spanning HANA development, BW, production support, cloud migration and modern data platforms.</p>
+    </div>
+    <div class="about-grid">
+      <div class="card">
+        <p>
+          I’m passionate about continuously strengthening my leadership, critical thinking,
+          problem-solving and technical abilities. My experience includes working directly with
+          clients and users, gathering requirements, resolving data issues and delivering
+          end-to-end HANA models through to reporting.
+        </p>
+      </div>
+      <div class="card">
+        <p>
+          More recently, my work has expanded into cloud technology and analytics, including
+          Snowflake, Azure Data Lake Storage, Azure Data Factory, Streamlit and data migration
+          patterns around SAP ecosystems.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">02 · Selected work</div><h2>Where data meets impact.</h2></div>
+      <p class="section-intro">Selected initiatives and outcomes from the experience documented in my profile.</p>
+    </div>
+    <div class="project-grid">
+      <article class="project">
+        <div class="num">01 / HANA PERFORMANCE</div>
+        <h3>400GB reporting optimization</h3>
+        <p>Optimized SAP HANA reporting for an FMCG client, achieving approximately 20-second refresh times across YTD, PTD and custom ranges.</p>
+      </article>
+      <article class="project">
+        <div class="num">02 / CLOUD DATA</div>
+        <h3>SAP → Snowflake dataflows</h3>
+        <p>Designed dataflows to migrate ADSO data into Snowflake using CDS + OData via ADF, with Change Data Capture implemented through Streams & Tasks.</p>
+      </article>
+      <article class="project">
+        <div class="num">03 / DATA FOR GOOD</div>
+        <h3>Analytics storytelling</h3>
+        <p>Developed a Streamlit application using Snowpark API and Matplotlib to visualize the impact of education and employment on women’s fertility rates.</p>
+      </article>
+      <article class="project">
+        <div class="num">04 / ANALYTICS</div>
+        <h3>Target Group reporting</h3>
+        <p>Built HANA Target Group reports aggregating sales and promotion data to support promotion execution and demand-planning forecast accuracy.</p>
+      </article>
+      <article class="project">
+        <div class="num">05 / MIGRATION</div>
+        <h3>Cold-data POCs</h3>
+        <p>Led proofs of concept for migrating cold data from SAP HANA to ADLS through ADF, enabling remote reads using custom SDI adapters.</p>
+      </article>
+      <article class="project">
+        <div class="num">06 / HANA MODELING</div>
+        <h3>End-to-end HANA solutions</h3>
+        <p>Created calculation views, scripted calculation views, stored procedures, table functions, HDB tables and SQLScript-based transformations.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">03 · Experience</div><h2>A decade-plus in data.</h2></div>
+      <p class="section-intro">From BW production support to leading modern HANA and cloud data initiatives.</p>
+    </div>
+
+    <div class="timeline">
+      <article class="role">
+        <div class="role-top">
+          <div><div class="company">HGS</div><div class="role-title">Lead Consultant</div></div>
+          <div class="date">June 2025 — Present · Bengaluru</div>
+        </div>
+        <ul>
+          <li>Developed a Streamlit app with Snowpark API and Matplotlib; secured 3rd place in the Snowflake Data for Good hackathon.</li>
+          <li>Designed ADSO-to-Snowflake dataflows using CDS + OData via ADF, with CDC using Streams & Tasks.</li>
+          <li>Optimized SAP HANA reporting for 400GB datasets, achieving 20-second refresh times for YTD/PTD/custom ranges.</li>
+          <li>Built Target Group reports in HANA aggregating sales and promotion data.</li>
+          <li>Led POCs for SAP HANA cold-data migration to ADLS via ADF and managed a team of 4.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-top">
+          <div><div class="company">HGS</div><div class="role-title">Senior Consultant</div></div>
+          <div class="date">March 2023 — Present · Bengaluru</div>
+        </div>
+        <p>Progressed into senior consulting responsibilities across HANA, analytics, delivery and team leadership.</p>
+      </article>
+
+      <article class="role">
+        <div class="role-top">
+          <div><div class="company">TekLink International LLC</div><div class="role-title">Senior Consultant</div></div>
+          <div class="date">October 2022 — March 2023 · Hyderabad</div>
+        </div>
+      </article>
+
+      <article class="role">
+        <div class="role-top">
+          <div><div class="company">Deloitte</div><div class="role-title">Senior Analyst</div></div>
+          <div class="date">May 2019 — October 2022 · India</div>
+        </div>
+        <ul>
+          <li>Created and enhanced HANA attribute views, analytic views, calculation views and scripted calculation views.</li>
+          <li>Developed stored procedures, table functions, HDB tables and SQLScript logic.</li>
+          <li>Delivered end-to-end HANA models from requirement gathering through reporting.</li>
+          <li>Created BODS jobs and transformations to extract data from Salesforce and SQL systems into HANA.</li>
+          <li>Won two SPOT awards for being a quick learner and for speedy delivery.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-top">
+          <div><div class="company">Infosys</div><div class="role-title">Technology Analyst</div></div>
+          <div class="date">November 2017 — May 2019 · Hyderabad</div>
+        </div>
+        <ul>
+          <li>Worked as an SAP BW on HANA consultant on BW 7.4 for the Polaris / Airbus project.</li>
+          <li>Created ADSOs, CompositeProviders, HANA models, BEx reports and calculation views.</li>
+          <li>Built process chains and master-data objects and participated in requirement gathering and technical specifications.</li>
+        </ul>
+      </article>
+
+      <article class="role">
+        <div class="role-top">
+          <div><div class="company">Tech Mahindra</div><div class="role-title">Software Engineer · BW Support Engineer</div></div>
+          <div class="date">August 2014 — November 2017 · Bengaluru</div>
+        </div>
+        <ul>
+          <li>Supported SAP BW production landscapes for a Nestle client, monitoring data loads from R/3 systems including SEM, APO, CRM, HR, FI and SD.</li>
+          <li>Handled load failures, IDocs, TRFCs, duplicate records, SID issues and short dumps.</li>
+          <li>Performed root-cause analysis and provided long-term solutions for extraction, performance and load issues.</li>
+          <li>Monitored and managed process chains, background jobs and daily/weekly/monthly data loads.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">04 · Toolkit</div><h2>Core capabilities.</h2></div>
+      <p class="section-intro">The technologies and working strengths explicitly represented in the profile.</p>
+    </div>
+    <div class="card">
+      <div class="skills">
+        <span class="skill">SAP HANA</span><span class="skill">SAP BW on HANA</span>
+        <span class="skill">SQLScript</span><span class="skill">Calculation Views</span>
+        <span class="skill">Scripted Calculation Views</span><span class="skill">Stored Procedures</span>
+        <span class="skill">Table Functions</span><span class="skill">HDB Tables</span>
+        <span class="skill">SAP BODS</span><span class="skill">ADSO</span>
+        <span class="skill">CompositeProvider</span><span class="skill">Process Chains</span>
+        <span class="skill">Snowflake</span><span class="skill">Snowpark</span>
+        <span class="skill">Azure Data Factory</span><span class="skill">ADLS</span>
+        <span class="skill">Streamlit</span><span class="skill">Matplotlib</span>
+        <span class="skill">Requirements Analysis</span><span class="skill">Team Management</span>
+        <span class="skill">Root Cause Analysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="kicker">05 · Credentials</div><h2>Education & recognition.</h2></div>
+    </div>
+    <div class="edu">
+      <div class="card">
+        <div class="kicker">Education</div>
+        <h3>Canara Engineering College</h3>
+        <p>Bachelor of Engineering — Electrical, Electronics and Communications Engineering</p>
+        <p class="small">June 2010 — June 2014</p>
+      </div>
+      <div class="card">
+        <div class="kicker">Certifications</div>
+        <div class="awards">
+          <div class="award">Hands-On Essentials: Data Application Builders Workshop</div>
+          <div class="award">Hands-On Essentials: Data Warehousing Workshop</div>
+          <div class="award">DAS Certified Specialist</div>
+          <div class="award">SPOT Award × 2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="card" style="padding:42px">
+      <div class="kicker">06 · Contact</div>
+      <h2>Let’s build something useful with data.</h2>
+      <p class="section-intro" style="margin-top:18px">
+        Open to conversations around SAP HANA, data engineering, analytics, cloud data platforms and technical leadership.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="mailto:prat.pi008@gmail.com">prat.pi008@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/pp2025" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <div><strong>Prithvi Pai</strong><div class="small">Lead Consultant · Data & Analytics</div></div>
+    <div class="small">Bengaluru, Karnataka, India · Built as a single-file portfolio</div>
+  </div>
+</footer>
+
+<script>
+const nav = document.querySelector('nav');
+let lastY = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.style.background = y > 20 ? 'rgba(7,17,31,.88)' : 'rgba(7,17,31,.72)';
+  lastY = y;
+});
+</script>
+</body>
+</html>
